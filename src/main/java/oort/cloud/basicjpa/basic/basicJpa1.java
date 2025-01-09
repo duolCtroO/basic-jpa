@@ -4,7 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import oort.cloud.basicjpa.member.Member;
+import oort.cloud.basicjpa.basic.member.Member;
 
 import java.util.List;
 
@@ -28,7 +28,7 @@ public class basicJpa1 {
     }
 
     public static void logic(EntityManager em){
-        String id = "id1";
+        long id = 1;
         Member member = new Member();
         member.setId(id);
         member.setName("하이");
