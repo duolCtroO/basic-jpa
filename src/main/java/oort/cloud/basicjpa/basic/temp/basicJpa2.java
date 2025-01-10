@@ -1,4 +1,4 @@
-package oort.cloud.basicjpa.basic;
+package oort.cloud.basicjpa.basic.temp;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -6,14 +6,15 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import oort.cloud.basicjpa.basic.member.Member;
 import oort.cloud.basicjpa.basic.member.RoleType;
+import oort.cloud.basicjpa.basic.member.Team;
 
 import java.time.LocalDateTime;
 
 public class basicJpa2 {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabook");
-        Member member = new Member(1, "test1", 12, RoleType.ADMIN, LocalDateTime.now(), LocalDateTime.now(), "test");
-        Member member2 = new Member(2, "test1", 12, RoleType.ADMIN, LocalDateTime.now(), LocalDateTime.now(), "test");
+        Member member = new Member(1, "test1", 12, RoleType.ADMIN, LocalDateTime.now(), LocalDateTime.now(), new Team(), "test");
+        Member member2 = new Member(2, "test1", 12, RoleType.ADMIN, LocalDateTime.now(), LocalDateTime.now(), new Team(), "test");
 //        saveAndUpdateSuc(emf, member);
         saveAndUpdateFail(emf, member2);
     }

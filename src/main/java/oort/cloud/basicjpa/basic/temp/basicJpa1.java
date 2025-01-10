@@ -1,4 +1,4 @@
-package oort.cloud.basicjpa.basic;
+package oort.cloud.basicjpa.basic.temp;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

@@ -32,6 +32,19 @@ public class Member {
 
     private LocalDateTime lastModifiedDate;
 
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
+
+    public void setTeam(Team team){
+        if(this.team != null){
+            this.team.getMembers().remove(this);
+        }
+        this.team = team;
+        this.team.getMembers().add(this);
+    }
+
     @Lob
     private String descriptions;
 
