@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="jpabook">
-        <class>oort.cloud.basicjpa.basic.member.Member</class>
-        <class>oort.cloud.basicjpa.basic.member.Team</class>
+<!--        <class>oort.cloud.basicjpa.basic.member.Member</class>-->
+<!--        <class>oort.cloud.basicjpa.basic.member.Team</class>-->
+        <class>oort.cloud.basicjpa.basic.product.Product</class>
+        <class>oort.cloud.basicjpa.basic.product.Member2</class>
+        <class>oort.cloud.basicjpa.basic.product.MemberProduct</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
@@ -27,6 +30,10 @@
         <class>oort.cloud.basicjpa.shop.entity.OrderItem</class>
         <class>oort.cloud.basicjpa.shop.entity.OrderStatus</class>
         <class>oort.cloud.basicjpa.shop.entity.Member</class>
+        <class>oort.cloud.basicjpa.shop.entity.Delivery</class>
+        <class>oort.cloud.basicjpa.shop.entity.DeliveryStatus</class>
+        <class>oort.cloud.basicjpa.shop.entity.Category</class>
+        <class>oort.cloud.basicjpa.shop.entity.CategoryItem</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>

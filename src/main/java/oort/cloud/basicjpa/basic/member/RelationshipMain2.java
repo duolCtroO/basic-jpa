@@ -1,23 +1,19 @@
-package oort.cloud.basicjpa.basic;
+package oort.cloud.basicjpa.basic.member;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import oort.cloud.basicjpa.basic.member.Member;
-import oort.cloud.basicjpa.basic.member.RoleType;
 import oort.cloud.basicjpa.basic.member.Team;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
-public class RelationshipMain {
+public class RelationshipMain2 {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabook");
         saveMember(emf);
-        findMember(emf);
-        updateMember(emf);
-        findJPQL(emf);
+        findMembers(emf);
     }
 
 
@@ -57,31 +53,13 @@ public class RelationshipMain {
         tx.commit();
     }
 
-    private static void findMember(EntityManagerFactory emf){
+    private static void findMembers(EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
-        Member mem1 = em.find(Member.class, "1");
-        Team team = mem1.getTeam();
-        String teamName = team.getName();
-        System.out.println(teamName);
-    }
-
-    private static void updateMember(EntityManagerFactory emf){
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
-        Member mem1 = em.find(Member.class, "1");
-        Team team2 = em.find(Team.class, 2);
-        mem1.setTeam(team2);
-        tx.commit();
-    }
-
-    private static void deleteTeam(EntityManagerFactory emf){
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
-        Member mem1 = em.find(Member.class, "1");
-        mem1.setTeam(null);
-        tx.commit();
+        Team team = em.find(Team.class, "1");
+        List<Member> members = team.getMembers();
+        for (Member member : members) {
+            System.out.println(member.getName());
+        }
     }
 
     private static void findJPQL(EntityManagerFactory emf){

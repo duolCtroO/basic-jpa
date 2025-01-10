@@ -32,6 +32,10 @@ public class Order {
     @ToString.Exclude
     private List<OrderItem> orderItems = new LinkedList<>();
 
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    private Delivery delivery;
+
     public void setMember(Member member){
         if(this.member != null){
             this.member.getOrders().remove(this);
@@ -43,5 +47,10 @@ public class Order {
     public void addOrderItems(OrderItem orderItem){
         orderItem.setOrder(this);
         this.orderItems.add(orderItem);
+    }
+
+    public void setDelivery(Delivery delivery){
+        this.delivery = delivery;
+        this.delivery.setOrder(this);
     }
 }
