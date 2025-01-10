@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "MEMBER")
-public class Member {
+public class Member extends CommonEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
