@@ -6,13 +6,14 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import oort.cloud.basicjpa.basic.member.Member;
 import oort.cloud.basicjpa.basic.member.RoleType;
+import oort.cloud.basicjpa.basic.member.Team;
 
 import java.time.LocalDateTime;
 
 public class MergeJpa {
 
     public static void main(String[] args) {
-        Member member = new Member(1, "test1", 12, RoleType.ADMIN, LocalDateTime.now(), LocalDateTime.now(), "test");
+        Member member = new Member(1, "test1", 12, RoleType.ADMIN, LocalDateTime.now(), LocalDateTime.now(), new Team(),"test");
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabook");
         createMember(emf, member);
         member.setName("test2"); //member 객체 준영속이라 반영 불가능

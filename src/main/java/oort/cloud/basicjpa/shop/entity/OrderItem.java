@@ -3,20 +3,25 @@ package oort.cloud.basicjpa.shop.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.LinkedList;
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "ORDER_ITEM")
 public class OrderItem {
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue
+    @Column(name = "ORDER_ITEM_ID")
+    private long orderItemId;
 
-    @Column(name = "ORDER_ID")
-    private long orderId;
+    @ManyToOne
+    @JoinColumn(name = "ORDER_ID")
+    private Order order;
 
-    @Column(name = "ITEM_ID")
-    private long itemId;
+    @ManyToOne
+    @JoinColumn(name = "ITEM_ID")
+    private Item item;
 
     @Column(name = "ORDER_PRICE")
     private int orderPrice;

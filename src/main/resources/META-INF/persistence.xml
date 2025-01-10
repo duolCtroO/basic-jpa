@@ -2,6 +2,7 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="jpabook">
         <class>oort.cloud.basicjpa.basic.member.Member</class>
+        <class>oort.cloud.basicjpa.basic.member.Team</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
@@ -22,10 +23,10 @@
 
     <persistence-unit name="shop">
         <class>oort.cloud.basicjpa.shop.entity.Item</class>
-        <class>oort.cloud.basicjpa.shop.entity.Orders</class>
+        <class>oort.cloud.basicjpa.shop.entity.Order</class>
         <class>oort.cloud.basicjpa.shop.entity.OrderItem</class>
         <class>oort.cloud.basicjpa.shop.entity.OrderStatus</class>
-        <class>oort.cloud.basicjpa.shop.entity.User</class>
+        <class>oort.cloud.basicjpa.shop.entity.Member</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
