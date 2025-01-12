@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="jpabook">
-<!--        <class>oort.cloud.basicjpa.basic.member.Member</class>-->
-<!--        <class>oort.cloud.basicjpa.basic.member.Team</class>-->
-        <class>oort.cloud.basicjpa.basic.product.Product</class>
-        <class>oort.cloud.basicjpa.basic.product.Member2</class>
-        <class>oort.cloud.basicjpa.basic.product.MemberProduct</class>
+        <class>oort.cloud.basicjpa.basic.member.Member</class>
+        <class>oort.cloud.basicjpa.basic.member.Team</class>
+<!--        <class>oort.cloud.basicjpa.basic.product.Product</class>-->
+<!--        <class>oort.cloud.basicjpa.basic.product.Member2</class>-->
+<!--        <class>oort.cloud.basicjpa.basic.product.MemberProduct</class>-->
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>

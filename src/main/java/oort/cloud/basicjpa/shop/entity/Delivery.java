@@ -13,9 +13,8 @@ public class Delivery {
     @Column(name = "DELIVERY_ID")
     private Long deliveryId;
 
-    private String street;
-
-    private String zipcode;
+    @Embedded
+    private Address address;
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;

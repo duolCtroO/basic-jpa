@@ -2,6 +2,7 @@ package oort.cloud.basicjpa.basic.member;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
 
 import java.time.LocalDateTime;
 
@@ -32,7 +33,8 @@ public class Member {
 
     private LocalDateTime lastModifiedDate;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER) // 즉시 로딩 설정
+//    @ManyToOne(fetch = FetchType.LAZY) // 지연 로딩
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 

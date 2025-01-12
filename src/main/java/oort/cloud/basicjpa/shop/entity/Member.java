@@ -20,14 +20,8 @@ public class Member extends CommonEntity{
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "CITY")
-    private String city;
-
-    @Column(name = "STREET")
-    private String street;
-
-    @Column(name = "ZIPCODE")
-    private String zipcode;
+    @Embedded
+    private Address address;
 
     @OneToMany(mappedBy = "member")
     @ToString.Exclude

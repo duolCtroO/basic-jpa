@@ -12,8 +12,14 @@ public class ShopApplicaion {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-
+        test(em);
         tx.commit();
+    }
+
+
+    public static void test(EntityManager em){
+        Delivery delivery = new Delivery();
+        em.persist(delivery);
     }
 
 }
