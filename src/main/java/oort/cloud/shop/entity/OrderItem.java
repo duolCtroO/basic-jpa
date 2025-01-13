@@ -1,10 +1,7 @@
-package oort.cloud.basicjpa.shop.entity;
+package oort.cloud.shop.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.util.LinkedList;
-import java.util.List;
 
 @Data
 @Entity

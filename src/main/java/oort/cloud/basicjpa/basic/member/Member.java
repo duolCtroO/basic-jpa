@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "MEMBER", uniqueConstraints = @UniqueConstraint(
+@Entity(name = "MEMBERTEST")
+@Table(name = "MEMBERTEST", uniqueConstraints = @UniqueConstraint(
         name = "NAME_AGE_UNIQUE",
         columnNames = {"NAME", "AGE"}
 ))

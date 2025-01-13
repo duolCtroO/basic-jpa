@@ -1,7 +1,8 @@
-package oort.cloud.basicjpa.shop.entity;
+package oort.cloud.shop.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
@@ -11,6 +12,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "ORDERS")
+@EqualsAndHashCode(callSuper = false)
 public class Order extends CommonEntity{
     @Id
     @GeneratedValue
