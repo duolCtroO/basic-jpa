@@ -2,6 +2,8 @@ package oort.cloud.shop.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -10,7 +12,9 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "DTYPE")
-public abstract class Item {
+@Getter
+@Setter
+public class Item {
 
     @Id
     @GeneratedValue
