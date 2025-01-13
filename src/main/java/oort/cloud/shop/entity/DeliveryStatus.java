@@ -1,4 +1,4 @@
-package oort.cloud.basicjpa.shop.entity;
+package oort.cloud.shop.entity;
 
 public enum DeliveryStatus {
     READY, START, FINISH

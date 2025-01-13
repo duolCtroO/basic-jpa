@@ -1,4 +1,4 @@
-package oort.cloud.basicjpa.shop.entity;
+package oort.cloud.shop.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -13,9 +13,8 @@ public class Delivery {
     @Column(name = "DELIVERY_ID")
     private Long deliveryId;
 
-    private String street;
-
-    private String zipcode;
+    @Embedded
+    private Address address;
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;

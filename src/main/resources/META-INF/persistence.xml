@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="jpabook">
-<!--        <class>oort.cloud.basicjpa.basic.member.Member</class>-->
-<!--        <class>oort.cloud.basicjpa.basic.member.Team</class>-->
-        <class>oort.cloud.basicjpa.basic.product.Product</class>
-        <class>oort.cloud.basicjpa.basic.product.Member2</class>
-        <class>oort.cloud.basicjpa.basic.product.MemberProduct</class>
+        <class>oort.cloud.basicjpa.basic.member.Member</class>
+        <class>oort.cloud.basicjpa.basic.member.Team</class>
+<!--        <class>oort.cloud.basicjpa.basic.product.Product</class>-->
+<!--        <class>oort.cloud.basicjpa.basic.product.Member2</class>-->
+<!--        <class>oort.cloud.basicjpa.basic.product.MemberProduct</class>-->
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
@@ -24,32 +24,32 @@
         </properties>
     </persistence-unit>
 
-    <persistence-unit name="shop">
-        <class>oort.cloud.basicjpa.shop.entity.Item</class>
-        <class>oort.cloud.basicjpa.shop.entity.Order</class>
-        <class>oort.cloud.basicjpa.shop.entity.OrderItem</class>
-        <class>oort.cloud.basicjpa.shop.entity.OrderStatus</class>
-        <class>oort.cloud.basicjpa.shop.entity.Member</class>
-        <class>oort.cloud.basicjpa.shop.entity.Delivery</class>
-        <class>oort.cloud.basicjpa.shop.entity.DeliveryStatus</class>
-        <class>oort.cloud.basicjpa.shop.entity.Category</class>
-        <class>oort.cloud.basicjpa.shop.entity.CategoryItem</class>
-        <properties>
-            <!-- 필수 속성 -->
-            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+<!--    <persistence-unit name="shop">-->
+<!--        <class>oort.cloud.shop.entity.Item</class>-->
+<!--        <class>oort.cloud.shop.entity.Order</class>-->
+<!--        <class>oort.cloud.shop.entity.OrderItem</class>-->
+<!--        <class>oort.cloud.shop.entity.OrderStatus</class>-->
+<!--        <class>oort.cloud.shop.entity.Member</class>-->
+<!--        <class>oort.cloud.shop.entity.Delivery</class>-->
+<!--        <class>oort.cloud.shop.entity.DeliveryStatus</class>-->
+<!--        <class>oort.cloud.shop.entity.Category</class>-->
+<!--        <class>oort.cloud.shop.entity.CategoryItem</class>-->
+<!--        <properties>-->
+<!--            &lt;!&ndash; 필수 속성 &ndash;&gt;-->
+<!--            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>-->
+<!--            <property name="javax.persistence.jdbc.user" value="sa"/>-->
+<!--            <property name="javax.persistence.jdbc.password" value=""/>-->
+<!--            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>-->
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />-->
 
-            <!-- 옵션 -->
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.use_sql_comments" value="true" />
-            <property name="hibernate.id.new_generator_mappings" value="true" />
-            <property name="hibernate.archive.autodetection" value="class" />
-            <property name="hibernate.hbm2ddl.auto" value="create" />
-        </properties>
-    </persistence-unit>
+<!--            &lt;!&ndash; 옵션 &ndash;&gt;-->
+<!--            <property name="hibernate.show_sql" value="true" />-->
+<!--            <property name="hibernate.format_sql" value="true" />-->
+<!--            <property name="hibernate.use_sql_comments" value="true" />-->
+<!--            <property name="hibernate.id.new_generator_mappings" value="true" />-->
+<!--            <property name="hibernate.archive.autodetection" value="class" />-->
+<!--            <property name="hibernate.hbm2ddl.auto" value="create" />-->
+<!--        </properties>-->
+<!--    </persistence-unit>-->
 
 </persistence>
