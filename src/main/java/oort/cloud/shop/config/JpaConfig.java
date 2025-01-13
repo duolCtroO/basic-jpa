@@ -1,5 +1,6 @@
 package oort.cloud.shop.config;
 
-public class JpaConfig {
+import org.springframework.context.annotation.Bean;
 
+public class JpaConfig {
 }
