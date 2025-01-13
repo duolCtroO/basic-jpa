@@ -9,8 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Data
-@Entity(name = "MEMBER_SHOP")
-@Table(name = "MEMBER_SHOP")
+@Entity
+@Table(name = "MEMBER")
 @EqualsAndHashCode(callSuper = false)
 public class Member extends CommonEntity{
 
