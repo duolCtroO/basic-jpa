@@ -3,10 +3,12 @@ package oort.cloud.shop.service;
 import oort.cloud.shop.entity.Item;
 import oort.cloud.shop.repository.ItemRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class ItemService{
     private final ItemRepository itemRepository;
 
@@ -20,8 +22,8 @@ public class ItemService{
         return item.getId();
     }
 
-    public Item findById(Item item){
-        return itemRepository.findOne(item.getId());
+    public Item findById(Long id){
+        return itemRepository.findOne(id);
     }
 
     public List<Item> findAll(){

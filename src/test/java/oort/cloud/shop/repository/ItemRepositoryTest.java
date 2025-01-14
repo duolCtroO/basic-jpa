@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -24,7 +26,7 @@ class ItemRepositoryTest {
         //given
         Item item = new Item();
         item.setName("test1");
-        item.setPrice(1000);
+        item.setPrice(BigDecimal.valueOf(1000));
         item.setStockQuantity(10);
 
         //when

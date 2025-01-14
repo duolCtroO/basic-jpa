@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,9 +14,10 @@ import java.util.List;
 @Entity
 @Table(name = "ORDERS")
 @EqualsAndHashCode(callSuper = false)
+
 public class Order extends CommonEntity{
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ORDER_ID")
     private Long id;
 
@@ -54,5 +56,32 @@ public class Order extends CommonEntity{
     public void setDelivery(Delivery delivery){
         this.delivery = delivery;
         this.delivery.setOrder(this);
+    }
+
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItem){
+        Order order = new Order();
+        order.setMember(member);
+        order.setDelivery(delivery);
+        for (OrderItem item : orderItem) {
+            order.addOrderItems(item);
+        }
+        order.setOrderDate(LocalDateTime.now());
+        order.setStatus(OrderStatus.ORDER);
+        return order;
+    }
+
+    public void cancel(){
+        if(this.getStatus().equals(OrderStatus.FINNISH)) throw new RuntimeException("배송중인 상품은 취소가 불가능합니다.");
+        this.status = OrderStatus.CANCEL;
+        for (OrderItem orderItem : this.getOrderItems()) {
+            orderItem.cancel();
+        }
+    }
+
+    public BigDecimal getTotalPrice(){
+        return this.getOrderItems()
+                .stream()
+                .map(OrderItem::getTotalPrice)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 }

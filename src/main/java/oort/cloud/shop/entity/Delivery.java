@@ -2,6 +2,7 @@ package oort.cloud.shop.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -20,5 +21,6 @@ public class Delivery {
     private DeliveryStatus status;
 
     @OneToOne(mappedBy = "delivery")
+    @ToString.Exclude
     private Order order;
 }
