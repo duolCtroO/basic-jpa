@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 
 @MappedSuperclass
 public class CommonEntity {
-
     private LocalDateTime createDate;
     private LocalDateTime lastModifiedDate;
 }

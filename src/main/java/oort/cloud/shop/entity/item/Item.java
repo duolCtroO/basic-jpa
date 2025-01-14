@@ -1,4 +1,4 @@
-package oort.cloud.shop.entity;
+package oort.cloud.shop.entity.item;
 
 import jakarta.persistence.*;
 import lombok.Data;

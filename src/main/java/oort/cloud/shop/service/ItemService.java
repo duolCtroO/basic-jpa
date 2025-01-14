@@ -1,6 +1,6 @@
 package oort.cloud.shop.service;
 
-import oort.cloud.shop.entity.Item;
+import oort.cloud.shop.entity.item.Item;
 import oort.cloud.shop.repository.ItemRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

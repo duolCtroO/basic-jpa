@@ -2,9 +2,8 @@ package oort.cloud.shop.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import oort.cloud.shop.entity.Item;
+import oort.cloud.shop.entity.item.Item;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

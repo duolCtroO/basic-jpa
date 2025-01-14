@@ -2,6 +2,7 @@ package oort.cloud.shop.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import oort.cloud.shop.entity.item.Item;
 
 @Entity
 @Data

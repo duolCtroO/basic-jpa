@@ -1,6 +1,9 @@
 package oort.cloud.shop.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import oort.cloud.shop.entity.*;
+import oort.cloud.shop.entity.item.Item;
 import oort.cloud.shop.repository.OrderRepository;
 import oort.cloud.shop.data.OrderSearch;
 import org.springframework.stereotype.Service;
@@ -14,6 +17,9 @@ public class OrderService {
     private final MemberService memberService;
     private final ItemService itemService;
     private final OrderRepository orderRepository;
+
+    @PersistenceContext
+    private EntityManager em;
 
     public OrderService(MemberService memberService, ItemService itemService, OrderRepository orderRepository) {
         this.memberService = memberService;

@@ -1,15 +1,13 @@
 package oort.cloud.shop.repository;
 
 import jakarta.persistence.EntityManager;
-import oort.cloud.shop.entity.Item;
+import oort.cloud.shop.entity.item.Item;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class ItemRepositoryTest {

@@ -72,7 +72,7 @@ public class Order extends CommonEntity{
 
     public void cancel(){
         if(this.getStatus().equals(OrderStatus.FINNISH)) throw new RuntimeException("배송중인 상품은 취소가 불가능합니다.");
-        this.status = OrderStatus.CANCEL;
+        this.setStatus(OrderStatus.CANCEL);
         for (OrderItem orderItem : this.getOrderItems()) {
             orderItem.cancel();
         }
