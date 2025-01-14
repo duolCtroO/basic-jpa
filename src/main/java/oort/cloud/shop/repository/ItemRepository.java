@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-@Transactional
 public class ItemRepository {
     @PersistenceContext
     private EntityManager em;
