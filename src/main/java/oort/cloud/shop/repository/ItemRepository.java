@@ -3,28 +3,11 @@ package oort.cloud.shop.repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import oort.cloud.shop.entity.item.Item;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public class ItemRepository {
-    @PersistenceContext
-    private EntityManager em;
-
-    public void save(Item item){
-        if(item.getId() == null){
-            em.persist(item);
-        }else{
-            em.merge(item);
-        }
-    }
-
-    public Item findOne(Long id){
-        return em.find(Item.class, id);
-    }
-
-    public List<Item> findAll(){
-        return em.createQuery("select i from Item i").getResultList();
-    }
+public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredicateExecutor<Item> {
 }
